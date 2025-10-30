@@ -7,6 +7,7 @@ AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
 
+import os
 def create_character(name, character_class):
     """
     Creates a new character dictionary with calculated stats
@@ -16,9 +17,18 @@ def create_character(name, character_class):
     char = create_character("Aria", "Mage")
     # Should return: {"name": "Aria", "class": "Mage", "level": 1, "strength": 5, "magic": 15, "health": 80, "gold": 100}
     """
-    # TODO: Implement this function
-    # Remember to use calculate_stats() function for stat calculation
-    pass
+    character = {"name": name,
+                "class": character_class,
+                "level": 1,
+                "gold": 100}
+    
+    # Calculate initial stats based on class and level
+    strength, magic, health = calculate_stats(character_class, 1)
+    character["strength"] = strength
+    character["magic"] = magic
+    character["health"] = health
+    
+    return character
 
 def calculate_stats(character_class, level):
     """
