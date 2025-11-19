@@ -91,7 +91,7 @@ def save_character(character, filename):
     
 
 def load_character(filename):
-   """
+    """
     Loads character from text file
     Returns: character dictionary if successful, None if file not found
     """
